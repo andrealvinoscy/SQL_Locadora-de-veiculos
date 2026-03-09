@@ -45,6 +45,7 @@ Alternativa simples (sem servidor MySQL instalado):
 
 ## Principais Consultas Demonstradas
 
+```sql
 ### 1. Histórico de Manutenções
 
 SELECT descricao, dataManutencao, custo

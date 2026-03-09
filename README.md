@@ -100,5 +100,5 @@ Exportar resultados para Power BI / Excel e criar dashboard visual
 Adicionar índices em colunas frequentes (placa, dataInicio, estado)
 
 Trabalho acadêmico – aberto a sugestões e melhorias!
-Feito por André Alves | Ciência de Dados | [andrealvinoscy@gmail.com]
+Feito por André Alvino | Ciência de Dados | [andrealvinoscy@gmail.com]
 

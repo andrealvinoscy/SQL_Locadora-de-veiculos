@@ -46,9 +46,10 @@ Alternativa simples (sem servidor MySQL instalado):
 ## Principais Consultas Demonstradas
 
 ### 1. Histórico de Manutenções
-```sql
+
 SELECT descricao, dataManutencao, custo
 FROM Manutencao;
+
 
 ###2. Total Arrecadado (apenas pagamentos confirmados)
 SELECT SUM(valorTotal) AS TotalArrecadado

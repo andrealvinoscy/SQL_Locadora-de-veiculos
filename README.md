@@ -74,5 +74,31 @@ JOIN Pagamento p ON l.idPagamento = p.idPagamento
 WHERE p.estado = 'Pendente'
 GROUP BY c.nome
 ORDER BY c.nome ASC;
+```
+Relatório de inadimplência por cliente.
+Insights e Resultados Esperados (com dados de exemplo)
 
+Total arrecadado (Pagos): ~R$ 14.000+ (varia conforme datas de exemplo)
+Veículos mais populares: HB20, Gol, Compass (baseado nas locações inseridas)
+Manutenções caras: Pintura/retoques (R$ 900), escapamento (R$ 750), suspensão (R$ 700)
+Pendências: Alguns pagamentos de 2025 ainda em "Pendente" – total devido pode ser calculado dinamicamente
+
+Aprendizados do Projeto
+
+Modelagem relacional completa (normalização 3NF)
+Uso correto de chaves estrangeiras para evitar inconsistências
+Consultas com JOINs múltiplos e agregações (GROUP BY, SUM, COUNT)
+Importância de estados controlados (ex: 'Disponível' vs 'Alugado' vs 'Manutenção')
+Preparação de dados de teste realistas (CPFs, placas, cidades brasileiras)
+
+Próximos Passos Sugeridos
+
+Criar uma View para "Veículos Disponíveis"
+Adicionar stored procedure para calcular valor total de uma locação (diárias × dias)
+Integrar com Python (via mysql-connector ou sqlalchemy) para CRUD via interface
+Exportar resultados para Power BI / Excel e criar dashboard visual
+Adicionar índices em colunas frequentes (placa, dataInicio, estado)
+
+Trabalho acadêmico – aberto a sugestões e melhorias!
+Feito por André Alves | Ciência de Dados | [andrealvinoscy@gmail.com]
 

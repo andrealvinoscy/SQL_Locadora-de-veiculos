@@ -46,18 +46,18 @@ Alternativa simples (sem servidor MySQL instalado):
 ## Principais Consultas Demonstradas
 
 ```sql
-### 1. Histórico de Manutenções
+1. Histórico de Manutenções
 
 SELECT descricao, dataManutencao, custo
 FROM Manutencao;
 
 
-###2. Total Arrecadado (apenas pagamentos confirmados)
+2. Total Arrecadado (apenas pagamentos confirmados)
 SELECT SUM(valorTotal) AS TotalArrecadado
 FROM Pagamento
 WHERE estado = 'Pago';
 
-###3. Veículos mais alugados (ranking)
+3. Veículos mais alugados (ranking)
 
 SELECT v.modelo, v.marca, COUNT(lv.idLocacao) AS QtdeLocacoes
 FROM Veiculo v
@@ -65,7 +65,7 @@ JOIN LocacaoVeiculo lv ON v.idVeiculo = lv.idVeiculo
 GROUP BY v.modelo, v.marca
 ORDER BY QtdeLocacoes DESC;
 
-###4. Clientes com pagamentos pendentes
+4. Clientes com pagamentos pendentes
 
 SELECT c.nome, SUM(p.valorTotal) AS ValorDevido
 FROM Cliente c

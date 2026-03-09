@@ -50,5 +50,27 @@ Alternativa simples (sem servidor MySQL instalado):
 SELECT descricao, dataManutencao, custo
 FROM Manutencao;
 
+###2. Total Arrecadado (apenas pagamentos confirmados)
+SELECT SUM(valorTotal) AS TotalArrecadado
+FROM Pagamento
+WHERE estado = 'Pago';
+
+###3. Veículos mais alugados (ranking)
+
+SELECT v.modelo, v.marca, COUNT(lv.idLocacao) AS QtdeLocacoes
+FROM Veiculo v
+JOIN LocacaoVeiculo lv ON v.idVeiculo = lv.idVeiculo
+GROUP BY v.modelo, v.marca
+ORDER BY QtdeLocacoes DESC;
+
+###4. Clientes com pagamentos pendentes
+
+SELECT c.nome, SUM(p.valorTotal) AS ValorDevido
+FROM Cliente c
+JOIN Locacao l ON c.idCliente = l.idCliente
+JOIN Pagamento p ON l.idPagamento = p.idPagamento
+WHERE p.estado = 'Pendente'
+GROUP BY c.nome
+ORDER BY c.nome ASC;
 
 
